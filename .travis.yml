@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - '0.12'
+  - 'iojs'
+sudo: false
+before_install:
+  - 'sudo apt-get install -y build-essential libgraphicsmagick++1-dev libarchive-dev'
+script: npm install . && npm test
