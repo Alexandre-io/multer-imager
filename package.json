@@ -1,6 +1,6 @@
 {
   "name": "multer-imager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Imager multer storage engine",
   "main": "index.js",
   "scripts": {
@@ -32,16 +32,16 @@
   "dependencies": {
     "graphicsmagick-stream": "^2.1.0",
     "lodash": "^3.10.0",
-    "s3fs": "^2.0.1"
+    "s3fs": "^2.1.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.1.39",
-    "chai": "^3.1.0",
+    "aws-sdk": "^2.1.41",
+    "chai": "^3.2.0",
     "express": "^4.13.1",
     "mkdirp": "^0.5.1",
     "mocha": "^2.2.5",
     "multer": "^1.0.1",
-    "rimraf": "^2.4.1",
+    "rimraf": "^2.4.2",
     "s3rver": "^0.0.5",
     "supertest": "^1.0.1"
   }
