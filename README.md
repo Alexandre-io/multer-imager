@@ -2,7 +2,7 @@
 Imager multer storage engine permit to resize and upload an image to AWS S3.
 
 This project is mostly an integration piece for existing code samples from Multer's [storage engine documentation](https://github.com/expressjs/multer/blob/master/StorageEngine.md).
-And based on [multer-s3](https://github.com/badunk/multer-s3) and [graphicsmagick-stream](https://github.com/e-conomic/graphicsmagick-stream)
+And was inspired from [multer-s3](https://github.com/badunk/multer-s3) and [graphicsmagick-stream](https://github.com/e-conomic/graphicsmagick-stream)
 
 # Requirements
 ## Debian/Ubuntu
@@ -36,7 +36,7 @@ var upload = multer({
     accessKeyId: 'aws-key-id',
     secretAccessKey: 'aws-key',
     region: 'us-east-1',
-    reqfilename: 'user._id',  // Optional: define image name (req.user._id)
+    reqfilename: '',           // [Optional]: get filename from req object (ie: user._id => req.user._id)
     gm: {
           pool: 5,             // how many graphicsmagick processes to use 
           format: 'png',       // format to convert to 
