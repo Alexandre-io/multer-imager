@@ -4,7 +4,7 @@ var should = require('chai').should();
 describe('multer-imager', function() {
   it('is exposed as a function', function() {
     multerS3.should.be.a('function');
-  })
+  });
   it('accepts s3 options', function() {
     multerS3({
       bucket: 'bucket',

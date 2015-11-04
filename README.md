@@ -36,32 +36,26 @@ var upload = multer({
     accessKeyId: 'aws-key-id',
     secretAccessKey: 'aws-key',
     region: 'us-east-1',
-    reqfilename: '',           // [Optional]: get filename from req object (ie: user._id => req.user._id)
+    filename: function (req, file, cb) { // [Optional]: define filename (default: random)
+      cb(null, Date.now())               // i.e. with a timestamp
+    },                                   //
     gm: {
-          pool: 5,             // how many graphicsmagick processes to use 
-          format: 'png',       // format to convert to 
+          pool: 5,             // how many graphicsmagick processes to use
+          format: 'png',       // format to convert to
           scale: {
-            width: 200,        // scale input to this width 
-            height: 200,       // scale input this height 
-            type: 'contain'    // scale type (either contain/cover/fixed) 
+            width: 200,        // scale input to this width
+            height: 200,       // scale input this height
+            type: 'contain'    // scale type (either contain/cover/fixed)
           },
           crop: {
-            width: 200,        // crop input to this width 
-            height: 200,       // crop input this height 
-            x: 0,              // crop using this x offset 
-            y: 0               // crop using this y offset 
+            width: 200,        // crop input to this width
+            height: 200,       // crop input this height
+            x: 0,              // crop using this x offset
+            y: 0               // crop using this y offset
           },
-          page: [1,5],         // only render page 1 to 5 (for pdfs) 
-                               // set to a single number if you only want to render one page 
-                               // or omit if you want all pages 
-          rotate: 'auto',      // auto rotate image based on exif data 
+          rotate: 'auto',      // auto rotate image based on exif data
                                // or use rotate:degrees 
-          density: 300,        // set the image density. useful when converting pdf to images 
-          split: false,        // when converting pdfs into images it is possible to split 
-                               // into multiple pages. If set to true the resulting file will 
-                               // be a tar containing all the images. 
-          tar: false           // stream a tar containing the image. This is forced to `true` 
-                               // if split is set to `true` 
+          density: 300,        // set the image density. useful when converting pdf to images
         }
   })
 });

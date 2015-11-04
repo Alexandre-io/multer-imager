@@ -1,3 +1,8 @@
+2.0.0 / 2015-11-04
+==================
+  * BREAKING CHANGE: option reqfilename replaced by filename (function)
+  * Update dependencies
+
 1.2.0 / 2015-09-17
 ==================
   * Remove global variables
