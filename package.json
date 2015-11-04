@@ -31,7 +31,6 @@
   "homepage": "https://github.com/Alexandre-io/multer-imager#readme",
   "dependencies": {
     "graphicsmagick-stream": "~2.1.2",
-    "lodash": "~3.10.1",
     "s3fs": "~2.3.0"
   },
   "devDependencies": {
