@@ -4,6 +4,7 @@
   "description": "Imager multer storage engine",
   "main": "index.js",
   "scripts": {
+    "pretest" : "./node_modules/jshint/bin/jshint index.js",
     "test": "mocha test/bootstrap.spec.js test/**/*.spec.js"
   },
   "repository": {
@@ -37,6 +38,7 @@
     "aws-sdk": "~2.2.2",
     "chai": "~3.4.0",
     "express": "~4.13.3",
+    "jshint": "^2.8.0",
     "mkdirp": "~0.5.1",
     "mocha": "~2.3.2",
     "multer": "~1.1.0",
