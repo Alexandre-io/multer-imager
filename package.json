@@ -1,6 +1,6 @@
 {
   "name": "multer-imager",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Imager multer storage engine",
   "main": "index.js",
   "scripts": {
@@ -32,18 +32,18 @@
   "homepage": "https://github.com/Alexandre-io/multer-imager#readme",
   "dependencies": {
     "graphicsmagick-stream": "~2.1.2",
-    "s3fs": "~2.3.0"
+    "s3fs": "~2.4.0"
   },
   "devDependencies": {
-    "aws-sdk": "~2.2.2",
-    "chai": "~3.4.0",
+    "aws-sdk": "~2.2.21",
+    "chai": "~3.4.1",
     "express": "~4.13.3",
-    "jshint": "^2.8.0",
+    "jshint": "~2.8.0",
     "mkdirp": "~0.5.1",
-    "mocha": "~2.3.2",
+    "mocha": "~2.3.4",
     "multer": "~1.1.0",
-    "rimraf": "~2.4.3",
-    "s3rver": "~0.0.6",
+    "rimraf": "~2.4.4",
+    "s3rver": "~0.0.11",
     "supertest": "~1.1.0"
   }
 }

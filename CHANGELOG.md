@@ -1,3 +1,8 @@
+2.1.0 / 2015-11-04
+==================
+  * Update s3fs 2.3->2.4
+  * Update dev. dependencies
+
 2.0.0 / 2015-11-04
 ==================
   * BREAKING CHANGE: option reqfilename replaced by filename (function)
