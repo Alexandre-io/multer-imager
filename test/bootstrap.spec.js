@@ -10,8 +10,10 @@ before(function(done) {
     .setPort(4568)
     .setDirectory(path.resolve(__dirname, 'fixtures/.tmp'))
     .setSilent(true)
-    .run(function(err, host, port) {
-      if (err) return done(err);
+    .run(function(err) {
+      if (err) {
+        return done(err);
+      }
       mkdirp(path.resolve(__dirname, 'fixtures/.tmp/bucket-name'), done);
     });
 });

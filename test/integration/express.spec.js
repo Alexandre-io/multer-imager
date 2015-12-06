@@ -56,6 +56,7 @@ app.post('/upload', upload.array('avatars', 3), function(req, res, next) {
   lastReq = req;
   lastRes = res;
   res.status(200).send();
+  next();
 });
 
 // express setup
@@ -63,6 +64,7 @@ app.post('/uploadWithFilename', upload2.array('avatars', 3), function(req, res, 
   lastReq = req;
   lastRes = res;
   res.status(200).send();
+  next();
 });
 
 describe('express', function() {
@@ -76,7 +78,7 @@ describe('express', function() {
     supertest(app)
       .post('/upload')
       .attach('avatars', 'test/fixtures/pixel.png')
-      .end(function(err, res) {
+      .end(function(err) {
         lastReq.files.map(function(file) {
           file.should.have.property('key');
           file.key.should.have.string('avatars');
