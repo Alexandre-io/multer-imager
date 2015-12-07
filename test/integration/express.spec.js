@@ -78,7 +78,7 @@ describe('express', function() {
     supertest(app)
       .post('/upload')
       .attach('avatars', 'test/fixtures/pixel.png')
-      .end(function(err) {
+      .end(function() {
         lastReq.files.map(function(file) {
           file.should.have.property('key');
           file.key.should.have.string('avatars');
@@ -91,7 +91,7 @@ describe('express', function() {
     supertest(app)
       .post('/uploadWithFilename')
       .attach('avatars', 'test/fixtures/pixel.png')
-      .end(function(err, res) {
+      .end(function() {
         lastReq.files.map(function(file) {
           file.should.have.property('key');
           file.key.should.have.string('avatars/fileNameOne');
