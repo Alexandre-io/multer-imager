@@ -40,7 +40,7 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
       return cb(err);
     }
     var filePath = self.options.dirname + '/' + filename;
-    var outStream = self.s3fs.createWriteStream(filePath);
+    var outStream = self.s3fs.createWriteStream(filePath, self.options.options);
     file.stream
       .pipe(self.convert())
       .pipe(outStream);
