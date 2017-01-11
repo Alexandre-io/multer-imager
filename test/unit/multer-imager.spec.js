@@ -13,13 +13,19 @@ describe('multer-imager', function() {
       secretAccessKey: 'secretAccessKey',
       region: 'region',
       gm: {
-        format: 'png',
-        scale: {
-          width: 200,
-          height: 200,
-          type: 'contain'
-        }
+        width: 200,
+        height: 200,
+        options: '!'
       }
+    });
+  });
+  it('accepts default gm options', function() {
+    multerS3({
+      bucket: 'bucket',
+      dirname: 'uploads/',
+      accessKeyId: 'accessKeyId',
+      secretAccessKey: 'secretAccessKey',
+      region: 'region'
     });
   });
   it('stores the options within each instance', function() {
@@ -30,12 +36,9 @@ describe('multer-imager', function() {
       secretAccessKey: 'secretAccessKey',
       region: 'region',
       gm: {
-        format: 'png',
-        scale: {
-          width: 200,
-          height: 200,
-          type: 'contain'
-        }
+        width: 200,
+        height: 200,
+        options: '!'
       }
     });
     var multer2 = multerS3({
@@ -45,12 +48,9 @@ describe('multer-imager', function() {
       secretAccessKey: 'secretAccessKey',
       region: 'region',
       gm: {
-        format: 'png',
-        scale: {
-          width: 200,
-          height: 200,
-          type: 'contain'
-        }
+        width: 200,
+        height: 200,
+        options: '!'
       }
     });
     multer.should.have.property('options');
@@ -65,12 +65,9 @@ describe('multer-imager', function() {
       secretAccessKey: 'secretAccessKey',
       region: 'region',
       gm: {
-        format: 'png',
-        scale: {
-          width: 200,
-          height: 200,
-          type: 'contain'
-        }
+        width: 200,
+        height: 200,
+        options: '!'
       }
     });
     upload._handleFile.should.be.a('function');
@@ -83,12 +80,9 @@ describe('multer-imager', function() {
       secretAccessKey: 'secretAccessKey',
       region: 'region',
       gm: {
-        format: 'png',
-        scale: {
-          width: 200,
-          height: 200,
-          type: 'contain'
-        }
+        width: 200,
+        height: 200,
+        options: '!'
       }
     });
     upload._removeFile.should.be.a('function');

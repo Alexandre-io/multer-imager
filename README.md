@@ -2,12 +2,16 @@
 Imager multer storage engine permit to resize and upload an image to AWS S3.
 
 This project is mostly an integration piece for existing code samples from Multer's [storage engine documentation](https://github.com/expressjs/multer/blob/master/StorageEngine.md).
-And was inspired from [multer-s3](https://github.com/badunk/multer-s3) and [graphicsmagick-stream](https://github.com/e-conomic/graphicsmagick-stream)
+And was inspired from [multer-s3](https://github.com/badunk/multer-s3) and [gm](https://github.com/aheckmann/gm)
 
 # Requirements
 ## Debian/Ubuntu
 ```
-apt-get install build-essential libgraphicsmagick++1-dev libarchive-dev
+apt-get install graphicsmagick
+```
+## MacOS X
+```
+brew install graphicsmagick
 ```
 
 # Install
@@ -36,27 +40,15 @@ var upload = multer({
     accessKeyId: 'aws-key-id',
     secretAccessKey: 'aws-key',
     region: 'us-east-1',
-    filename: function (req, file, cb) { // [Optional]: define filename (default: random)
-      cb(null, Date.now())               // i.e. with a timestamp
-    },                                   //
-    gm: {
-          pool: 5,             // how many graphicsmagick processes to use
-          format: 'png',       // format to convert to
-          scale: {
-            width: 200,        // scale input to this width
-            height: 200,       // scale input this height
-            type: 'contain'    // scale type (either contain/cover/fixed)
-          },
-          crop: {
-            width: 200,        // crop input to this width
-            height: 200,       // crop input this height
-            x: 0,              // crop using this x offset
-            y: 0               // crop using this y offset
-          },
-          rotate: 'auto',      // auto rotate image based on exif data
-                               // or use rotate:degrees 
-          density: 300,        // set the image density. useful when converting pdf to images
-        }
+    filename: function (req, file, cb) {  // [Optional]: define filename (default: random)
+      cb(null, Date.now())                // i.e. with a timestamp
+    },                                    //
+    gm: {                                 // [Optional]: define graphicsmagick options
+      width: 200,                         // doc: http://aheckmann.github.io/gm/docs.html#resize
+      height: 200,
+      options: '!',
+      format: 'png'                      // Default: jpg
+    }
   })
 });
 

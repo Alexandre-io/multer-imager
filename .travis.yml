@@ -7,15 +7,10 @@ node_js:
   - '3'
   - '2'
   - '0.12'
-env:
-  - CXX=g++-4.8
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-      - build-essential
-      - libgraphicsmagick++1-dev
-      - libarchive-dev
+      - graphicsmagick
 script: npm install . && npm test
