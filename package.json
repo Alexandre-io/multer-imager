@@ -32,18 +32,18 @@
   "homepage": "https://github.com/Alexandre-io/multer-imager#readme",
   "dependencies": {
     "graphicsmagick-stream": "~2.1.2",
-    "s3fs": "~2.4.4"
+    "s3fs": "~2.5.0"
   },
   "devDependencies": {
-    "aws-sdk": "~2.3.17",
+    "aws-sdk": "~2.7.21",
     "chai": "~3.5.0",
-    "express": "~4.13.4",
-    "jshint": "~2.9.1",
+    "express": "~4.14.0",
+    "jshint": "~2.9.4",
     "mkdirp": "~0.5.1",
-    "mocha": "~2.5.3",
-    "multer": "~1.1.0",
-    "rimraf": "~2.5.2",
-    "s3rver": "~0.0.13",
-    "supertest": "~1.2.0"
+    "mocha": "~3.2.0",
+    "multer": "~1.2.1",
+    "rimraf": "~2.5.4",
+    "s3rver": "~1.0.2",
+    "supertest": "~2.0.1"
   }
 }
