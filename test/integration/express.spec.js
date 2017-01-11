@@ -16,12 +16,9 @@ var upload = multer({
     secretAccessKey: 'aws-key',
     region: 'us-east-1',
     gm: {
-      format: 'png',
-      scale: {
-        width: 200,
-        height: 200,
-        type: 'contain'
-      }
+      width: 200,
+      height: 200,
+      options: '!'
     },
     s3ForcePathStyle: true,
     endpoint: new AWS.Endpoint('http://localhost:4568')
@@ -36,12 +33,9 @@ var upload2 = multer({
     secretAccessKey: 'aws-key',
     region: 'us-east-1',
     gm: {
-      format: 'png',
-      scale: {
-        width: 200,
-        height: 200,
-        type: 'contain'
-      }
+      width: 200,
+      height: 200,
+      options: '!'
     },
     s3ForcePathStyle: true,
     filename: function(req, file, cb) {

@@ -1,6 +1,6 @@
 var S3FS = require('s3fs');
 var crypto = require('crypto');
-var gm = require('graphicsmagick-stream');
+var gm = require('gm');
 
 function S3Storage(opts) {
   if (!opts.bucket) {
@@ -18,13 +18,12 @@ function S3Storage(opts) {
   if (!opts.dirname) {
     throw new Error('dirname is required');
   }
-  if (!opts.gm) {
-    throw new Error('gm is required');
-  }
   this.options = opts;
-  this.options.filename = (opts.filename || getFilename);
+  this.options.filename = (opts.filename || getFilename)
   this.s3fs = new S3FS(opts.bucket, opts);
-  this.convert = gm(opts.gm);
+  if(!this.options.gm) {
+    this.options.gm = {};
+  }
 }
 
 function getFilename(req, file, cb) {
@@ -41,8 +40,9 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
     }
     var filePath = self.options.dirname + '/' + filename;
     var outStream = self.s3fs.createWriteStream(filePath);
-    file.stream
-      .pipe(self.convert())
+    gm(file.stream)
+      .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
+      .stream()
       .pipe(outStream);
     outStream.on('error', cb);
     outStream.on('finish', function() {

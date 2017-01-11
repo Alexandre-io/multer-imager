@@ -4,7 +4,7 @@
   "description": "Imager multer storage engine permit to resize and upload an image to AWS S3",
   "main": "index.js",
   "scripts": {
-    "pretest" : "./node_modules/jshint/bin/jshint index.js",
+    "pretest": "./node_modules/jshint/bin/jshint index.js",
     "test": "mocha test/bootstrap.spec.js test/**/*.spec.js"
   },
   "repository": {
@@ -17,6 +17,8 @@
     "image",
     "resize",
     "graphicsmagick",
+    "gm",
+    "imagemagick",
     "s3",
     "amazon",
     "aws"
@@ -31,7 +33,7 @@
   },
   "homepage": "https://github.com/Alexandre-io/multer-imager#readme",
   "dependencies": {
-    "graphicsmagick-stream": "~2.1.2",
+    "gm": "~1.23.0",
     "s3fs": "~2.4.4"
   },
   "devDependencies": {
