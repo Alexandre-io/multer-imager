@@ -39,7 +39,7 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
       return cb(err);
     }
     var filePath = self.options.dirname + '/' + filename;
-    var outStream = self.s3fs.createWriteStream(filePath);
+    var outStream = self.s3fs.createWriteStream(filePath, { 'ContentType': file.mimetype });
     gm(file.stream)
       .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
       .stream()
