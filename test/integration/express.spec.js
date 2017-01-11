@@ -52,6 +52,9 @@ var upload3 = multer({
     accessKeyId: 'aws-key-id',
     secretAccessKey: 'aws-key',
     region: 'us-east-1',
+    gm: {
+      format: 'png'
+    },
     s3ForcePathStyle: true,
     endpoint: new AWS.Endpoint('http://localhost:4568')
   })

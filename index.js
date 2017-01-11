@@ -42,7 +42,7 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
     var outStream = self.s3fs.createWriteStream(filePath, { 'ContentType': file.mimetype });
     gm(file.stream)
       .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
-      .stream()
+      .stream(self.options.gm.format || 'jpg')
       .pipe(outStream);
     outStream.on('error', cb);
     outStream.on('finish', function() {

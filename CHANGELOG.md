@@ -42,7 +42,8 @@ After:
 gm: {                          // [Optional]: define graphicsmagick options
       width: 200,              // doc: http://aheckmann.github.io/gm/docs.html#resize
       height: 200,
-      options: '!'
+      options: '!',
+      format: 'png'            // Default: jpg
     }
 ```
 
