@@ -1,6 +1,9 @@
 var S3FS = require('s3fs');
 var crypto = require('crypto');
 var gm = require('gm');
+var mime = require('mime');
+
+const DEFAULT_FORMAT = 'jpg';
 
 function S3Storage(opts) {
   if (!opts.bucket) {
@@ -39,10 +42,16 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
       return cb(err);
     }
     var filePath = self.options.dirname + '/' + filename;
-    var outStream = self.s3fs.createWriteStream(filePath, { 'ContentType': file.mimetype });
+    var contentType;
+    if(self.options.gm.format) {
+      contentType = mime.lookup(self.options.gm.format);
+    } else {
+      contentType = mime.lookup(DEFAULT_FORMAT);
+    }
+    var outStream = self.s3fs.createWriteStream(filePath, { 'ContentType': contentType });
     gm(file.stream)
       .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
-      .stream(self.options.gm.format || 'jpg')
+      .stream(self.options.gm.format || DEFAULT_FORMAT)
       .pipe(outStream);
     outStream.on('error', cb);
     outStream.on('finish', function() {
