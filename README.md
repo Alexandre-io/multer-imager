@@ -49,7 +49,7 @@ var upload = multer({
       options: '!',
       format: 'png'                       // Default: jpg
     },
-    s3 : {
+    s3 : {                                // [Optional]: define s3 options
       Metadata: {                         // http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html
         'customkey': 'data'               // "x-amz-meta-customkey","value":"data"
       }
