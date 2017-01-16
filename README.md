@@ -47,7 +47,12 @@ var upload = multer({
       width: 200,                         // doc: http://aheckmann.github.io/gm/docs.html#resize
       height: 200,
       options: '!',
-      format: 'png'                      // Default: jpg
+      format: 'png'                       // Default: jpg
+    },
+    s3 : {
+      Metadata: {                         // http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html
+        'customkey': 'data'               // "x-amz-meta-customkey","value":"data"
+      }
     }
   })
 });

@@ -27,6 +27,9 @@ function S3Storage(opts) {
   if(!this.options.gm) {
     this.options.gm = {};
   }
+  if(!this.options.s3) {
+    this.options.s3 = {};
+  }
 }
 
 function getFilename(req, file, cb) {
@@ -48,7 +51,9 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
     } else {
       contentType = mime.lookup(DEFAULT_FORMAT);
     }
-    var outStream = self.s3fs.createWriteStream(filePath, { 'ContentType': contentType });
+    var s3options = self.options.s3;
+    s3options.ContentType = contentType;
+    var outStream = self.s3fs.createWriteStream(filePath, s3options);
     gm(file.stream)
       .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
       .stream(self.options.gm.format || DEFAULT_FORMAT)

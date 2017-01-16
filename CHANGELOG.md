@@ -1,3 +1,7 @@
+3.1.0 / 2017-01-16
+==================
+  * Feature: Support s3 options (custom metadata, etc...)
+
 3.0.0 / 2017-01-11
 ==================
   * Feature: replace graphicsmagick-stream by gm
