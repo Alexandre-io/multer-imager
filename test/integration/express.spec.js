@@ -55,6 +55,11 @@ var upload3 = multer({
     gm: {
       format: 'png'
     },
+    s3 : {
+      Metadata: { // "customMetaData":[{"key":"x-amz-meta-custom","value":"metadata"}]
+        'custom': 'metadata'
+      }
+    },
     s3ForcePathStyle: true,
     endpoint: new AWS.Endpoint('http://localhost:4568')
   })
