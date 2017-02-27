@@ -1,3 +1,7 @@
+3.1.1 / 2017-02-27
+==================
+  * Setup Greenkeeper
+
 3.1.0 / 2017-01-16
 ==================
   * Feature: Support s3 options (custom metadata, etc...)
