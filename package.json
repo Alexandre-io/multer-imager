@@ -38,7 +38,7 @@
     "s3fs": "~2.5.0"
   },
   "devDependencies": {
-    "aws-sdk": "~2.147.0",
+    "aws-sdk": "~2.154.0",
     "chai": "~4.1.1",
     "express": "~5.0.0-alpha.6",
     "jshint": "~2.9.4",
