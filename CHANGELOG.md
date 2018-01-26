@@ -1,3 +1,8 @@
+3.2.0 / 2018-01-26
+==================
+  * Update dependencies
+  * Min. NodeJS >= 6.0
+  
 3.1.1 / 2017-02-27
 ==================
   * Setup Greenkeeper
