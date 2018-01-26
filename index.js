@@ -47,9 +47,9 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
     var filePath = self.options.dirname + '/' + filename;
     var contentType;
     if(self.options.gm.format) {
-      contentType = mime.lookup(self.options.gm.format);
+      contentType = mime.getType(self.options.gm.format);
     } else {
-      contentType = mime.lookup(DEFAULT_FORMAT);
+      contentType = mime.getType(DEFAULT_FORMAT);
     }
     var s3options = self.options.s3;
     s3options.ContentType = contentType;
