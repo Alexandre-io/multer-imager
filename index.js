@@ -56,6 +56,8 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
     var outStream = self.s3fs.createWriteStream(filePath, s3options);
     gm(file.stream)
       .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
+      .crop(self.options.gm.crop.width, self.options.gm.crop.height, 
+        self.options.gm.crop.x, self.options.gm.crop.y)
       .stream(self.options.gm.format || DEFAULT_FORMAT)
       .pipe(outStream);
     outStream.on('error', cb);
