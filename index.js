@@ -24,29 +24,32 @@ function S3Storage(opts) {
   this.options = opts;
   this.options.filename = (opts.filename || getFilename)
   this.s3fs = new S3FS(opts.bucket, opts);
-  if(!this.options.gm) {
+  if (!this.options.gm) {
     this.options.gm = {};
   }
-  if(!this.options.s3) {
+  if (!this.options.gm.crop) {
+    this.options.gm.crop = {};
+  }
+  if (!this.options.s3) {
     this.options.s3 = {};
   }
 }
 
 function getFilename(req, file, cb) {
-  crypto.pseudoRandomBytes(16, function(err, raw) {
+  crypto.pseudoRandomBytes(16, function (err, raw) {
     cb(err, err ? undefined : raw.toString('hex'));
   });
 }
 
-S3Storage.prototype._handleFile = function(req, file, cb) {
+S3Storage.prototype._handleFile = function (req, file, cb) {
   var self = this;
-  self.options.filename(req, file, function(err, filename) {
+  self.options.filename(req, file, function (err, filename) {
     if (err) {
       return cb(err);
     }
     var filePath = self.options.dirname + '/' + filename;
     var contentType;
-    if(self.options.gm.format) {
+    if (self.options.gm.format) {
       contentType = mime.getType(self.options.gm.format);
     } else {
       contentType = mime.getType(DEFAULT_FORMAT);
@@ -55,13 +58,13 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
     s3options.ContentType = contentType;
     var outStream = self.s3fs.createWriteStream(filePath, s3options);
     gm(file.stream)
-      .resize(self.options.gm.width , self.options.gm.height , self.options.gm.options)
-      .crop(self.options.gm.crop.width, self.options.gm.crop.height, 
+      .resize(self.options.gm.width, self.options.gm.height, self.options.gm.options)
+      .crop(self.options.gm.crop.width, self.options.gm.crop.height,
         self.options.gm.crop.x, self.options.gm.crop.y)
       .stream(self.options.gm.format || DEFAULT_FORMAT)
       .pipe(outStream);
     outStream.on('error', cb);
-    outStream.on('finish', function() {
+    outStream.on('finish', function () {
       cb(null, {
         size: outStream.bytesWritten,
         key: filePath,
@@ -71,10 +74,10 @@ S3Storage.prototype._handleFile = function(req, file, cb) {
   });
 };
 
-S3Storage.prototype._removeFile = function(req, file, cb) {
+S3Storage.prototype._removeFile = function (req, file, cb) {
   this.s3fs.unlink(file.key, cb);
 };
 
-module.exports = function(opts) {
+module.exports = function (opts) {
   return new S3Storage(opts);
 };

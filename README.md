@@ -49,6 +49,12 @@ var upload = multer({
       height: 200,
       options: '!',
       format: 'png'                       // Default: jpg
+      crop: {
+        width: 200,
+        height: 200,
+        x: 0,
+        y: 0
+      }
     },
     s3 : {                                // [Optional]: define s3 options
       Metadata: {                         // http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html
