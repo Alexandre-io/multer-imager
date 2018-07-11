@@ -1,3 +1,8 @@
+3.3.0 / 2018-07-11
+==================
+  * Update dependencies
+  * Add crop option
+
 3.2.0 / 2018-01-26
 ==================
   * Update dependencies
