@@ -1,3 +1,7 @@
+3.3.3 / 2019-01-12
+==================
+  * Update dependencies: mime, aws-sdk
+
 3.3.2 / 2018-10-20
 ==================
   * Update dependencies
