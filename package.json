@@ -47,6 +47,6 @@
     "multer": "~1.4.1",
     "rimraf": "~2.6.1",
     "s3rver": "~2.2.6",
-    "supertest": "~3.4.0"
+    "supertest": "~4.0.0"
   }
 }
