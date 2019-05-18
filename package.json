@@ -40,7 +40,7 @@
   "devDependencies": {
     "aws-sdk": "~2.453.0",
     "chai": "~4.2.0",
-    "express": "~4.16.4",
+    "express": "~4.17.0",
     "jshint": "~2.10.0",
     "mkdirp": "~0.5.1",
     "mocha": "~6.1.0",
