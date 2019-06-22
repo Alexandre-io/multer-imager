@@ -12,8 +12,8 @@ var upload = multer({
   storage: multers3({
     dirname: 'avatars',
     bucket: 'bucket-name',
-    accessKeyId: 'aws-key-id',
-    secretAccessKey: 'aws-key',
+    accessKeyId: 'S3RVER',
+    secretAccessKey: 'S3RVER',
     region: 'us-east-1',
     gm: {
       width: 200,
@@ -29,8 +29,8 @@ var upload2 = multer({
   storage: multers3({
     dirname: 'avatars',
     bucket: 'bucket-name',
-    accessKeyId: 'aws-key-id',
-    secretAccessKey: 'aws-key',
+    accessKeyId: 'S3RVER',
+    secretAccessKey: 'S3RVER',
     region: 'us-east-1',
     gm: {
       width: 200,
@@ -49,8 +49,8 @@ var upload3 = multer({
   storage: multers3({
     dirname: 'avatars',
     bucket: 'bucket-name',
-    accessKeyId: 'aws-key-id',
-    secretAccessKey: 'aws-key',
+    accessKeyId: 'S3RVER',
+    secretAccessKey: 'S3RVER',
     region: 'us-east-1',
     gm: {
       format: 'png'

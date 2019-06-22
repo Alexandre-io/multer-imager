@@ -4,6 +4,7 @@ var s3rver = new S3rver({
   port: 4568,
   hostname: 'localhost',
   silent: true,
+  allowMismatchedSignatures: true,
   directory: path.resolve(__dirname, '.tmp')
 });
 var rimraf = require('rimraf');
