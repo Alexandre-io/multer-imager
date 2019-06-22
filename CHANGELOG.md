@@ -1,3 +1,9 @@
+4.0.0 / 2019-06-22
+==================
+  * Upgrade s3rver
+  * Fix js-yaml security issue
+  * Drop support NodeJS < 8.x
+
 3.3.3 / 2019-01-12
 ==================
   * Update dependencies: mime, aws-sdk
