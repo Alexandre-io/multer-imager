@@ -38,12 +38,12 @@
     "s3fs": "~2.5.0"
   },
   "devDependencies": {
-    "aws-sdk": "~2.569.0",
+    "aws-sdk": "~2.609.0",
     "chai": "~4.2.0",
     "express": "~4.17.0",
     "jshint": "~2.11.0",
-    "mkdirp": "~0.5.1",
     "mocha": "~7.1.0",
+    "mkdirp": "~1.0.0",
     "multer": "~1.4.1",
     "rimraf": "~3.0.0",
     "s3rver": "~3.2.0",
