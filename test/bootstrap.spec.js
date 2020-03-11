@@ -12,11 +12,13 @@ var mkdirp = require('mkdirp');
 
 before(function (done) {
   s3rver.run(function (err) {
-      if (err) {
-        return done(err);
-      }
-      mkdirp(path.resolve(__dirname, '.tmp/bucket-name'), done);
+    if (err) {
+      return done(err);
+    }
+    mkdirp(path.resolve(__dirname, '.tmp/bucket-name')).then(() => {
+      return done();
     });
+  });
 });
 
 after(function (done) {
