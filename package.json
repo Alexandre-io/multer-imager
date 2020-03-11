@@ -1,6 +1,6 @@
 {
   "name": "multer-imager",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Imager multer storage engine permit to resize and upload an image to AWS S3",
   "main": "index.js",
   "scripts": {
