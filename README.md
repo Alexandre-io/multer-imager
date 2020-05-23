@@ -1,4 +1,4 @@
-# multer-imager [![Build Status](https://travis-ci.org/Alexandre-io/multer-imager.svg)](https://travis-ci.org/Alexandre-io/multer-imager) [![Codacy Badge](https://api.codacy.com/project/badge/grade/9692bba42b1d4977872ac34f068065a9)](https://www.codacy.com/app/alexandre_2/multer-imager) [![Greenkeeper badge](https://badges.greenkeeper.io/Alexandre-io/multer-imager.svg)](https://greenkeeper.io/)
+# multer-imager [![Build Status](https://travis-ci.org/Alexandre-io/multer-imager.svg)](https://travis-ci.org/Alexandre-io/multer-imager) [![Codacy Badge](https://api.codacy.com/project/badge/grade/9692bba42b1d4977872ac34f068065a9)](https://www.codacy.com/app/alexandre_2/multer-imager) 
 
 Imager multer storage engine permit to resize and upload an image to AWS S3.
 
