@@ -34,7 +34,7 @@
   "homepage": "https://github.com/Alexandre-io/multer-imager#readme",
   "dependencies": {
     "gm": "~1.23.1",
-    "mime": "~2.4.5",
+    "mime": "~2.4.6",
     "s3fs": "~2.5.0"
   },
   "devDependencies": {
